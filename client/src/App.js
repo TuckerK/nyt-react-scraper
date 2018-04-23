@@ -1,16 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
+import Results from "./components/Results/Results";
+import Saved from "./components/Saved/Saved";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Search title='Search'/>   
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Header />
+      <Route exact path="/" />
+      <Search title="Search" />
+      <Results title="Results" />
+      <Saved title="Saved" />
+    </div>
+  </Router>
+);
 
 export default App;
